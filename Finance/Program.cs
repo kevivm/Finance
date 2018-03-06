@@ -13,6 +13,7 @@ namespace Finance
 
             User user = new User(username, pasportNumber);
             user.StartMenu();
+
         }
     }
 }
