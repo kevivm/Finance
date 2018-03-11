@@ -170,6 +170,5 @@ namespace Finance
             ConsoleHelper.UserShowMessageStartMenu();
             StartMenu();
         }
-
     }
 }

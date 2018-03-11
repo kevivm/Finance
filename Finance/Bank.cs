@@ -49,8 +49,6 @@ namespace Finance
             Console.WriteLine($"You have been open {bill} bill in {BankName}");
 
             return bill;
-
         }
-
     }
 }

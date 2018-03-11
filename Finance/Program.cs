@@ -19,7 +19,6 @@ namespace Finance
 
             User user = new User(myInfo);
             user.StartMenu();
-
         }
     }
 }

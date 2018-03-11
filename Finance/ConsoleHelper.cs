@@ -2,7 +2,7 @@
 
 namespace Finance
 {
-    class ConsoleHelper
+    public class ConsoleHelper
     {
         public static void UserStartMenu()
         {
@@ -37,7 +37,5 @@ namespace Finance
             Console.WriteLine("2:Deposit");
             Console.WriteLine("3:Checking");
         }
-
-
     }
 }
