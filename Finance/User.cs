@@ -32,11 +32,11 @@ namespace Finance
                 switch (myChoice)
                 {
                     case "1":
-                        OpenAccountInBank();
+                        this.OpenAccountInBank();
                         switchFlag = false;
                         break;
                     case "0":
-                        GetInfoAboutMe();
+                        this.GetInfoAboutMe();
                         switchFlag = false;
                         break;
                     case "9":
@@ -54,8 +54,8 @@ namespace Finance
         private void RegisterInBank(Bank bank, string typeBill)
         {
             string bill = bank.OpenAccount();
-            SetBills(typeBill, bill);
-            ShowMessageStartMenu();
+            this.SetBills(typeBill, bill);
+            this.ShowMessageStartMenu();
         }
 
         private void OpenAccountInBank()
@@ -70,15 +70,15 @@ namespace Finance
             {
                 case "1":
                     Privat24 Privat24 = new Privat24(this);
-                    RegisterInBank(Privat24, "Privat24");
+                    this.RegisterInBank(Privat24, "Privat24");
                     break;
                 case "2":
                     Pumb Pumb = new Pumb(this);
-                    RegisterInBank(Pumb, "Pumb");
+                    this.RegisterInBank(Pumb, "Pumb");
                     break;
                 case "3":
                     AlfaBank AlfaBank = new AlfaBank(this);
-                    RegisterInBank(AlfaBank, "AlfaBank");
+                    this.RegisterInBank(AlfaBank, "AlfaBank");
                     break;
                 case "0":
                     StartMenu();
@@ -98,16 +98,16 @@ namespace Finance
                 switch (selectBank)
                 {
                     case "Privat24":
-                        _billsPrivat24.Add(bill);
-                        _billsPrivat24 = _billsPrivat24.Distinct().ToList();
+                        this._billsPrivat24.Add(bill);
+                        this._billsPrivat24 = this._billsPrivat24.Distinct().ToList();
                         break;
                     case "Pumb":
-                        _billsPumb.Add(bill);
-                        _billsPumb = _billsPumb.Distinct().ToList();
+                        this._billsPumb.Add(bill);
+                        this._billsPumb = this._billsPumb.Distinct().ToList();
                         break;
                     case "AlfaBank":
-                        _billsAlfabank.Add(bill);
-                        _billsAlfabank = _billsAlfabank.Distinct().ToList();
+                        this._billsAlfabank.Add(bill);
+                        this._billsAlfabank = this._billsAlfabank.Distinct().ToList();
                         break;
                     default:
                         break;
@@ -127,7 +127,7 @@ namespace Finance
                 Console.WriteLine();
             }
 
-            if (_billsPrivat24.Count > 0)
+            if (this._billsPrivat24.Count > 0)
             {
                 Console.Write("privat24 bills: ");
 
@@ -139,7 +139,7 @@ namespace Finance
                 Console.WriteLine();
             }
 
-            if (_billsPumb.Count > 0)
+            if (this._billsPumb.Count > 0)
             {
                 Console.Write("Pumb bills: ");
 
@@ -151,7 +151,7 @@ namespace Finance
                 Console.WriteLine();
             }
 
-            if (_billsAlfabank.Count > 0)
+            if (this._billsAlfabank.Count > 0)
             {
                 Console.Write("AlfaBank bills: ");
 
@@ -162,7 +162,7 @@ namespace Finance
             }
 
             Console.WriteLine();
-            ShowMessageStartMenu();
+            this.ShowMessageStartMenu();
         }
 
         private void ShowMessageStartMenu()
