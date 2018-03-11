@@ -6,15 +6,15 @@ namespace Finance
 {
     public class User
     {
-        public Dictionary<string, string> myInfo = new Dictionary<string, string>();
+        public Dictionary<string, string> Myinfo = new Dictionary<string, string>();
 
-        private List<string> billsPrivat24 = new List<string>();
-        private List<string> billsPumb = new List<string>();
-        private List<string> billsAlfabank = new List<string>();
+        private List<string> _billsPrivat24 = new List<string>();
+        private List<string> _billsPumb = new List<string>();
+        private List<string> _billsAlfabank = new List<string>();
 
         internal User(Dictionary<string, string> info)
         {
-            myInfo = info;
+            this.Myinfo = info;
         }
 
         //Show Start Menu. endless cycle 
@@ -98,16 +98,16 @@ namespace Finance
                 switch (selectBank)
                 {
                     case "Privat24":
-                        billsPrivat24.Add(bill);
-                        billsPrivat24 = billsPrivat24.Distinct().ToList();
+                        _billsPrivat24.Add(bill);
+                        _billsPrivat24 = _billsPrivat24.Distinct().ToList();
                         break;
                     case "Pumb":
-                        billsPumb.Add(bill);
-                        billsPumb = billsPumb.Distinct().ToList();
+                        _billsPumb.Add(bill);
+                        _billsPumb = _billsPumb.Distinct().ToList();
                         break;
                     case "AlfaBank":
-                        billsAlfabank.Add(bill);
-                        billsAlfabank = billsAlfabank.Distinct().ToList();
+                        _billsAlfabank.Add(bill);
+                        _billsAlfabank = _billsAlfabank.Distinct().ToList();
                         break;
                     default:
                         break;
@@ -122,16 +122,16 @@ namespace Finance
 
             if (flag)
             {
-                Console.WriteLine("Name:" + myInfo["Name"]);
-                Console.WriteLine("Passport:" + myInfo["pasportNumber"]);
+                Console.WriteLine("Name:" + Myinfo["Name"]);
+                Console.WriteLine("Passport:" + Myinfo["pasportNumber"]);
                 Console.WriteLine();
             }
 
-            if (billsPrivat24.Count > 0)
+            if (_billsPrivat24.Count > 0)
             {
                 Console.Write("privat24 bills: ");
 
-                foreach (string privat24 in this.billsPrivat24)
+                foreach (string privat24 in this._billsPrivat24)
                 {
                     Console.Write(privat24 + " | ");
                 }
@@ -139,11 +139,11 @@ namespace Finance
                 Console.WriteLine();
             }
 
-            if (billsPumb.Count > 0)
+            if (_billsPumb.Count > 0)
             {
                 Console.Write("Pumb bills: ");
 
-                foreach (string pumb in this.billsPumb)
+                foreach (string pumb in this._billsPumb)
                 {
                     Console.Write(pumb + " | ");
                 }
@@ -151,11 +151,11 @@ namespace Finance
                 Console.WriteLine();
             }
 
-            if (billsAlfabank.Count > 0)
+            if (_billsAlfabank.Count > 0)
             {
                 Console.Write("AlfaBank bills: ");
 
-                foreach (string alfa in this.billsAlfabank)
+                foreach (string alfa in this._billsAlfabank)
                 {
                     Console.Write(alfa + " | ");
                 }

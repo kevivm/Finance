@@ -5,13 +5,13 @@ namespace Finance
 {
     internal class Bank
     {
-        protected Dictionary<string, string> userInfo = new Dictionary<string, string>();
+        protected Dictionary<string, string> UserInfo = new Dictionary<string, string>();
 
         public string BankName;
 
         public Bank(User client)
         {
-            this.userInfo = client.myInfo;
+            this.UserInfo = client.Myinfo;
             //then...We can use <userInfo> in the interest of the bank
         }
 
