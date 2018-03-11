@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Finance
 {
@@ -9,9 +10,14 @@ namespace Finance
             Console.ForegroundColor = ConsoleColor.Green;
 
             string username = "Semenov Igor Andreevish";
-            string pasportNumber = "FA 295102";
+            string pasportNumber = "FA295102";
 
-            User user = new User(username, pasportNumber);
+            Dictionary<string, string> myInfo = new Dictionary<string, string>();
+
+            myInfo.Add("Name", username);
+            myInfo.Add("pasportNumber", pasportNumber);
+
+            User user = new User(myInfo);
             user.StartMenu();
 
         }

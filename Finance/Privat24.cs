@@ -5,7 +5,7 @@
 
         public Privat24(User client) : base(client)
         {
-            int a = 5;
+            this.BankName = "Privat24";
         }
     }
 }

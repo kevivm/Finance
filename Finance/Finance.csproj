@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AlfaBank.cs" />
     <Compile Include="Bank.cs" />
+    <Compile Include="ConsoleHelper.cs" />
     <Compile Include="Pumb.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Privat24.cs" />

@@ -3,28 +3,32 @@ using System.Collections.Generic;
 
 namespace Finance
 {
-    public abstract class Bank
+    internal class Bank
     {
         protected Dictionary<string, string> userInfo = new Dictionary<string, string>();
 
+        public string BankName;
+
         public Bank(User client)
         {
-            this.userInfo = client.getInfo();
+            this.userInfo = client.myInfo;
             //then...We can use <userInfo> in the interest of the bank
         }
 
+        /**
+         * Open user account Credit? || Deposit? || Checking?
+         * 
+         *@return string bill
+         **/
         internal string OpenAccount()
         {
-            beginToStart: Console.Clear();
-            Console.WriteLine("what type of biils do you want to open?");
-            Console.WriteLine();
+        beginToStart: Console.Clear();
 
-            Console.WriteLine("1:Credit");
-            Console.WriteLine("2:Deposit");
-            Console.WriteLine("3:Checking");
+            ConsoleHelper.BankOpenAccount();
 
             string myChoice = Console.ReadLine();
             string bill;
+
             switch (myChoice)
             {
                 case "1":
@@ -40,6 +44,9 @@ namespace Finance
                     goto beginToStart;
                     break;
             }
+
+            Console.Clear();
+            Console.WriteLine($"You have been open {bill} bill in {BankName}");
 
             return bill;
 
